@@ -34,11 +34,11 @@ $Run.Add_Click({ Run })
 $Close.Add_Click({ Close })
 
 Function Close {
-    Write-Verbose -Message "Hello World" -Verbose
+    $Form.close()
 }
 
 Function Run {
-    Start-Process Powershell -ArgumentList "Test-NetConnection $($TextBox1.text) -Hops 1;Pause"
+    Start-Process Powershell -ArgumentList "Test-NetConnection $($TextBox1.text) -Hops 1; Pause"
 }
 
 [void]$Form.ShowDialog()
